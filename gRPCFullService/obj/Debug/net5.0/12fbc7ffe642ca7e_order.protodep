@@ -1,0 +1,3 @@
+obj\Debug\net5.0\Protos/Order.cs \
+obj\Debug\net5.0\Protos/OrderGrpc.cs: C:/Users/ayild/.nuget/packages/grpc.tools/2.34.0/build/native/include/google/protobuf/empty.proto\
+ Protos/order.proto

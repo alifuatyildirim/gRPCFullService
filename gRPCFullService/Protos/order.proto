@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option csharp_namespace = "gRPCFullServiceOrder";
+import "google/protobuf/empty.proto";
+package Orderv2;
+
+service Order{
+	rpc GetOrder(OrderRequest) returns (OrderResponse);
+	rpc GetOrderServerStream (google.protobuf.Empty) returns (stream OrderResponse);
+	rpc GetOrdersClientStream (stream OrderRequest) returns (OrderResponse);
+}
+message Orders{
+int32 Id=1;
+string Name=2;
+repeated OrderItems OrderItems=3;
+}
+message OrderItems{
+int32 Id=1;
+string Name=2;
+int32 OrderId=3;
+int32 Count=4;
+}
+message OrderResponse{
+	repeated Orders Orders=1;
+}
+message OrderRequest{
+	int32 Id=1;
+}
